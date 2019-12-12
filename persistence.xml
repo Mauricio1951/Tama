@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" 
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="tama">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		
+		<mapping-file>META-INF/consultas.xml</mapping-file>
+		
+		<class>Middleware.SetupTabelas.User</class>
+		<class>Middleware.SetupTabelas.Consumer</class>
+		<class>Middleware.SetupTabelas.Merchant</class>		
+		<class>Middleware.SetupTabelas.Fabricante</class>
+		<class>Middleware.SetupTabelas.Modelo</class>
+		<class>Middleware.SetupTabelas.ConsumerDevice</class>
+		<class>Middleware.SetupTabelas.MerchantDevice</class>
+		
+				
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost/middleware"/>
+			<property name="javax.persistence.jdbc.user"
+				value="root"/>
+			<property name="javax.persistence.jdbc.password"
+				value="Marina160890"/>
+			
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL8Dialect"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="javax.persistence.schema-generation.drop-source" value="metadata"/>
+		</properties>
+	</persistence-unit>
+</persistence>
